@@ -7,6 +7,7 @@ QMAKE_CXX += -fopenmp
 
 
 SOURCES += \
+        lib.cpp \
         main.cpp
 
 INCLUDEPATH += C:\armadillo-9.800.2\include
@@ -18,3 +19,6 @@ LIBS += \
     -llapack_win64_MT \
     -lblas_win64_MT \
     -fopenmp
+
+HEADERS += \
+    lib.h

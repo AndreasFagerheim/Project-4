@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.16)  18 NOV 2019 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.16)  19 NOV 2019 22:03
 entering extended mode
 **"./Project 4.tex"
 ("Project 4.tex"
@@ -682,49 +682,68 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[1{C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 192.
+
+Overfull \hbox (32.87654pt too wide) in paragraph at lines 179--198
+[] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 298.
+
+
+Overfull \hbox (7.57666pt too wide) in paragraph at lines 299--309
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
 []\T1/pplx/m/n/10 (+20) Hjort-Jensen, M.
  []
 
 
-Overfull \hbox (46.76442pt too wide) in paragraph at lines 212--214
+Overfull \hbox (46.76442pt too wide) in paragraph at lines 326--328
 \T1/pplx/m/n/10 (-20) https://github.com/CompPhysics/ComputationalPhysics 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
-[2
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
  ("Project 4.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 334.
+Package rerunfilecheck Info: File `"Project 4".out' has not changed.
+(rerunfilecheck)             Checksum: 215287B4DC633194B44A6FF9EF89B2F4;461.
 
-
-Package rerunfilecheck Warning: File `"Project 4".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Project 4".out':
-(rerunfilecheck)             Before: EF6A8CB7EDEA6E4777A431343E74D272;217
-(rerunfilecheck)             After:  75F6ABFE62DA7C2C1B0179A852922A6E;295.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
  ) 
 Here is how much of TeX's memory you used:
- 10857 strings out of 492450
- 172015 string characters out of 3119070
- 310142 words of memory out of 3000000
- 14830 multiletter control sequences out of 15000+200000
- 57195 words of font info for 194 fonts, out of 3000000 for 9000
+ 10919 strings out of 492450
+ 172729 string characters out of 3119070
+ 315182 words of memory out of 3000000
+ 14848 multiletter control sequences out of 15000+200000
+ 65042 words of font info for 219 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,45p,631b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,45p,631b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Andreas\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt0800.pk>{C:/Users/Andreas/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
 ps/base/8r.enc}<C:/Users/Andreas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
@@ -740,9 +759,9 @@ pe1/public/mathpazo/fplmri.pfb><C:/Users/Andreas/AppData/Local/Programs/MiKTeX
 /MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/Andreas/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/Andreas/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "Project 4.pdf" (2 pages, 141289 bytes).
+Output written on "Project 4.pdf" (3 pages, 152382 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 45609 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 155 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 50753 words of extra memory for PDF output out of 51595 (max. 10000000)
 

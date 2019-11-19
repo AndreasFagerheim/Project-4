@@ -109,21 +109,122 @@ This is a so-called binary system where the objects at each lattice site can onl
 The \href{{https://en.wikipedia.org/wiki/Ising_model}}{Ising model} has been extremely popular, with applications spanning from studies of phase transitions to simulations in statistics. In one and two dimensions its has analytical solutions to several expectation values and it gives a qualitatively  good underatanding of several types of phase transitions.  
 
 
+ We will assume that we have a ferromagnetic
+ordering, viz $J> 0$.  We will use periodic boundary conditions and
+the Metropolis algorithm only.
 
 \section{Theory}
 
-In its simplest form
-the energy of the Ising model is expressed as, without an externally applied magnetic field, 
+
+\subsection{ Ising Model }
+The total energy of the Ising Model can in the simplest form be expressed as
+
 \[
-E=-J\sum_{< kl >}^{N}s_ks_l 
+E=-J\sum_{< kl >}^{N}s_ks_l - B \sum_{ k }^{N}s_k
 \]
 with
 $s_k=\pm 1$. The quantity $N$ represents the total number of spins and $J$ is a coupling
 constant expressing the strength of the interaction between
 neighboring spins.  The symbol $<kl>$ indicates that we sum over
-nearest neighbors only. We will assume that we have a ferromagnetic
-ordering, viz $J> 0$.  We will use periodic boundary conditions and
-the Metropolis algorithm only. The material on the Ising model can be found in chapter 13 of the lecture notes. The Metropolis algorithm is discussed in chapter 12.
+nearest neighbors only. $B$ is an external magnetic field interacting with the magnetic moment set up by the spins \cite{Hjorth-Jensen:2015dg}. This article will look closer at the case of witch there is no interacting external magnetic field and the energy can the be expressed as:
+\begin{equation}
+E=-J\sum_{< kl >}^{N}s_ks_l
+\end{equation}
+
+The expectation value, the mean energy, can be calculated given a probability distribution $P_i$ as
+\begin{equation}
+\langle E \rangle=  \sum_{i= 1}^{M} E_iP_i(\beta)
+\end{equation}
+hvor the probability distribution is given by the Boltzmann distribution
+\[
+P_i(\beta) = \frac{ e^{-\beta E_i}}{Z}
+\]
+where $\beta = 1/k_bT$ is the inverse temperature, $k_b$ is the Boltzmann constant, $E_i$ is is the energy of a microstate $i$. The partition function is $Z$ and is given for the canonical ensemble as a sum over all microstates, M; 
+\[
+Z = \sum_{i= 1}^{M} e^{-\beta E_i}.
+\]
+Further the the expectation values for magnetic moment $|M|$
+\begin{equation}
+\langle |M| \rangle=  \sum_{i= 1}^{M} M_iP_i(\beta).
+\end{equation}
+The variance of $E$ and $|M|$ is given receptively as 
+
+\[
+ \sigma_E^2 = \langle E^2 \rangle -\langle E \rangle^2
+ \]
+ \[
+ \sigma_M^2 = \langle M^2 \rangle -\langle M \rangle^2
+\]
+This lets us express the specific heat capacity constant volume as
+
+\begin{equation}
+ C_v = \frac{1}{k_bT^2} (\langle E^2 \rangle -\langle E \rangle^2)
+\end{equation}
+
+\begin{equation}
+ \chi = \frac{1}{k_bT} (\langle M^2 \rangle -\langle M \rangle^2)
+\end{equation}
+\subsection{ Analytic solutions for the Ising Model of 2x2 lattice }
+Looking closer at a 2x2 lattice to find analytical solutions which will serve as a bechmark for the method implemented later with T = 1. \textbf{Table 1} shows the different energies and magnetization states. Using the known states we can find analytical solutions:
+
+\[
+Z = \sum_{i= 1}^{M} e^{-\beta E_i} = 2e^{\beta8J}+2e^{-8\beta J}+12e^0.
+\]
+with $\beta = 1/kT$ and $T = 1$ with unit $kT/J$ we get:
+\[
+Z = 2e^{8}+2e^{-8}+12e^0.
+\]
+\begin{table}[h]
+  \begin{threeparttable}
+    \caption{The different energy states of the 2x2 Ising Model}
+     \begin{tabular}{lllll}
+        \toprule
+        No. of spins & Degeneracy & Energy & Magnetization &  \\
+        \midrule
+                
+        4    & 1        & -8J   & 4       	   \\
+        3    & 4        &  0    & 2          \\
+        2    & 4        &  0    & 0          \\
+        2    & 2        &  8J   & 0          \\
+        1    & 4        &  0    & -2          \\
+        0    & 1        & -8J   & -4          \\
+        \bottomrule
+     \end{tabular}
+    \begin{tablenotes}
+      \small
+      \item Showing the different energy and magnetization for the two-dimensional Ising model with periodic boundary conditions.
+    \end{tablenotes} 
+  \end{threeparttable}
+  
+\end{table}
+
+This gives us the energy
+\begin{equation}
+\langle E \rangle=  \sum_{i= 1}^{M} E_iP_i(\beta) =\frac{1}{Z} \sum_{i= 1}^{M} E_ie^{-\beta E_i}
+\end{equation}
+\[
+\langle E \rangle=  \frac{1}{Z}(-8e^8 +8e^{-8} +8e^{-8}-8e^{8}) = -7.9839
+\]
+\[
+\frac{\langle E \rangle}{N}= -1.99598
+\]
+hvor $N = 4$. In the same way the magnetization turns out to be
+
+\begin{equation}
+\langle |M|\rangle=  \frac{1}{Z}\sum_{i= 1}^{M} M_i e^{E_i} = 3.9946
+\end{equation}
+\[
+\frac{\langle |M| \rangle}{N}= 0.9986
+\]
+The heat capacity then becomes:
+\begin{equation}
+\langle E^2 \rangle= \frac{1}{Z} \sum_{i= 1}^{M} E_i^2e^{E_i}= \frac{128e^8+128e^{-8}}{5973.917}
+\end{equation}
+\[
+\frac{C_V}{N} = \frac{\langle E^2 \rangle -{\langle E \rangle}^2}{4}= 0.12832 = 0.03208
+\]
+The magnetic susceptibility  can in the same way be calculated to $\frac{\chi}{N} = 0.00401$.
+
 
 \subsection{Studies of phase transitions.}
 Near $T_C$ we can characterize the behavior of many physical quantities
@@ -194,7 +295,20 @@ and susceptibility
 %------------------------------------------------
 
 \section{Results}
-
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+MC cycles &  ${E}/{N}$   & ${C_V}/{N}$    & ${|M|}/{N}$      & $ \chi/{N} $     \\ \hline
+Analytisk & -1.9959 & 0.03208   & 0.9986   & 0.00401  \\ \hline
+20000     & -1.9951 & 0.03910 & 0.9983 & 0.005288 \\ \hline
+40000     & -1.9966 & 0.02755 & 0.9988 & 0.003669 \\ \hline
+60000     & -1.9966 & 0.02715 & 0.9988 & 0.003345 \\ \hline
+80000     & -1.9964 & 0.02875 & 0.9987 & 0.003707 \\ \hline
+100000    & -1.9966 & 0.02699 & 0.9989 & 0.003455 \\ \hline
+\end{tabular}
+\caption{Comparison of the analytical values and the numerical values with increasing number of Monte Carlo cycles.}
+\label{tab:my-table}
+\end{table}
 
 
 \section{Conclusion}
