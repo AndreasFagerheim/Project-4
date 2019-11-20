@@ -3,6 +3,7 @@
 \BOOKMARK [2][-]{subsection.2.1}{ Ising Model }{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{ Analytic solutions for the Ising Model of 2x2 lattice }{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Studies of phase transitions.}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Methods}{}% 6
+\BOOKMARK [1][-]{section.3}{Metropolis algorithm}{}% 6
 \BOOKMARK [1][-]{section.4}{Results}{}% 7
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Probability}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 9
